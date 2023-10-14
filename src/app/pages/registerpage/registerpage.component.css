@@ -1,0 +1,15 @@
+.validateform{width: 70%;height: 60vh;min-width: 300px;max-width: 700px;margin-left: auto;margin-right: auto;margin-top: 200px;margin-bottom: 150px;}
+.error{color:crimson; font-size: 14px;margin-top: 10px;}
+.form-group{font-size: 14px;}
+.form-control{font-size: 14px;color: black;}
+input::placeholder {
+    color: #999; /* Change the color of the placeholder text */
+    font-style: italic; /* Make the placeholder text italic */
+    /* Add any other styles you want for the placeholder text */
+  }
+  
+  /* Style the input text when it's focused (optional) */
+  input:focus {
+    font-style: normal; /* Remove italic style when input is focused */
+    /* Add any other styles you want for the input text when focused */
+  }

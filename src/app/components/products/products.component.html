@@ -1,0 +1,22 @@
+<div class="products" >
+<div class="card" *ngFor="let product of products" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">{{productDescription}}</p>
+      <p class="card-text">{{product.price | currency:'EUR':'symbol'}}</p>
+      <p class="card-text">Category <br>{{product.category.name}}</p>
+    </div>
+   
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+</div>
+<!-- products.component.html -->
+
+
+<div class="product-list">
+
+

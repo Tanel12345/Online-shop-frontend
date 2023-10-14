@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+body{font-family: 'Raleway', sans-serif;}
+
+.carousel {width: 100%; max-width: 2000px; max-height: 500px; margin-left: auto; margin-right: auto;}
+.carousel-inner {width: 100% !important; max-width: 1500px;margin-left: auto; margin-right: auto;max-height: 500px;}
+
