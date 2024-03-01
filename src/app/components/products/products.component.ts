@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GetService, Products } from 'src/app/services/get.service';
+import { ProductService, Products } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-products',
@@ -8,10 +8,9 @@ import { GetService, Products } from 'src/app/services/get.service';
 })
 export class ProductsComponent {
 
-  productTitle: String = 'Title';
-  productDescription: String = 'Description';
+ 
   products: Products[] = [];
-  url: string = 'http://localhost:8080/category'
+ 
 
    queryParam = {
     categoryId: 3,
@@ -22,14 +21,22 @@ export class ProductsComponent {
 
 
 
- constructor(private getService: GetService){}
+ constructor(private productService: ProductService){}
 
 ngOnInit(): void {
-  this.getProducts();
+  this.getAllProducts();
 }
 
-getProducts(): void {
-  this.getService.getProductsByCategoryWithPathParameter(this.pathParameter)
+getProductsWithPathParam(): void {
+  this.productService.getProductsByCategoryWithPathParameter(this.pathParameter)
+  .subscribe((data: Products[]) => {
+    this.products = data; // Update the products array with the data from the service
+    console.log('Products:', this.products); // Log the products array
+  });
+}
+
+getAllProducts(): void {
+  this.productService.getAllProducts()
   .subscribe((data: Products[]) => {
     this.products = data; // Update the products array with the data from the service
     console.log('Products:', this.products); // Log the products array

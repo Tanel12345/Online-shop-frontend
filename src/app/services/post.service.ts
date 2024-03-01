@@ -46,10 +46,12 @@ registerUser(url: string, user: any){
     email: string;
   }
   interface LoginCustomerResponse {
-    
+    id: number;
     firstName: string;
-   
+    lastName: string;
     username: string;
+    createdAt: string;
+    email: string;
     userType: string;
   }
 

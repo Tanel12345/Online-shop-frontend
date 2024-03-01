@@ -1,9 +1,9 @@
-import { GetService } from './services/get.service';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app/app.component';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MainpageComponent } from './pages/mainpage/mainpage.component';
 import { LoginpageComponent } from './pages/loginpage/loginpage.component';
@@ -15,8 +15,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { PostService } from './services/post.service';
+
 import { NotFoundComponentComponent } from './exception/not-found-component/not-found-component.component';
+import { BasketComponent } from './pages/basket/basket.component';
+import { AppComponent } from './app/app.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+
 
 
 
@@ -31,7 +36,9 @@ import { NotFoundComponentComponent } from './exception/not-found-component/not-
     ProductsComponent,
     FooterComponent,
     NavbarComponent,
-    NotFoundComponentComponent
+    NotFoundComponentComponent,
+    BasketComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -39,11 +46,12 @@ import { NotFoundComponentComponent } from './exception/not-found-component/not-
     NgbModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
     
 
   ],
-  providers: [PostService, GetService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

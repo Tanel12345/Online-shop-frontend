@@ -1,40 +1,38 @@
 
 <div class="validateform">
-<form (ngSubmit)="onSubmit()"  class="row g-3" #loginForm="ngForm">
+  <form (ngSubmit)="onSubmit()"  class="row g-3" #loginForm="ngForm">
+    <fa-icon [icon]="faLock"></fa-icon>
     <h3>Please login</h3>
     <div class="col-md-4 form-group">
         <label for="validationCustomUsername" class="form-label">Username</label>
         <div class="input-group has-validation">
-          
-          <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" [(ngModel)]="loginUser.username" placeholder="Your username" name="username" required>
-          <div class="invalid-feedback">
-            Please choose a username.
-          </div>
-          </div>
-          <div *ngIf="errors['username']" class="error">{{ errors['username'] }}
+          <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" [(ngModel)]="loginUser.email" placeholder="Your username" name="username" required>
+         
         </div>
-      </div>
-    
-      
-    
+        <div *ngIf="error && error['username']" class="error-message">{{ error['username'] }}</div>
+    </div>
     <div class="col-md-4 form-group">
       <label for="password" class="form-label">Password</label>
-      <input type="password" id="inputPassword5" class="form-control" placeholder="Your password" aria-describedby="passwordHelpBlock" [(ngModel)]="loginUser.password" name="password" required>
-      
-      <div *ngIf="errors['Password']" class="error">{{ errors['Password'] }}</div>
-       
-     
-    </div> 
-  
-      
+      <input type="password" id="password" class="form-control" placeholder="Your password" aria-describedby="passwordHelpBlock" [(ngModel)]="loginUser.password" name="password" required>
+      <div *ngIf="error" class="error-message">{{ error['password'] }}</div>
+    </div>
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+    <div *ngIf="error" class="error-message">{{ error['loggedIn'] }}</div>
+    
+    <div *ngIf="loginForm.invalid && (loginForm.dirty || loginForm.touched)" class="error-message">
+      Form is invalid
+    </div>
+    <p>Not have account yet? <a routerLink="/register">Register user</a></p>
+    <a routerLink="/forgotPassword">Forgot password</a>
       <div class="col-12">
         <button class="btn btn-primary" type="submit">Login</button>
       </div>
-   
-  
-</form>
-
+  </form>
 </div>
+
+
+
+
 
 
 
